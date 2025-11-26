@@ -5,6 +5,7 @@ mod data;
 mod training;
 mod config;
 mod api ; 
+//mod  inference;
 
 use anyhow::Result;
 use burn::backend::{ Autodiff};
@@ -12,10 +13,6 @@ use burn_ndarray::NdArray;
 use training::trainer::MalariaTrainer;
 use config::model_config::ModelConfig;
 
-use actix_web::{web, App, HttpServer};
-use burn::record::{BinFileRecorder, FullPrecisionSettings, Recorder};
-use api::{AppState, routes, Backend};
-use config::model_config::ModelConfig;
 
 /// Backend principal avec autodiff
 type Backend = Autodiff<NdArray<f64>>;
@@ -25,20 +22,16 @@ type Backend = Autodiff<NdArray<f64>>;
 async fn main() -> Result<()> {
     // Configuration du modèle optimisée pour 13,000 images
     // Dans votre ModelConfig pour CPU
-      let config = ModelConfig {
-        image_width: 64,
+    let config = ModelConfig {
+        image_width: 64,       // Garder 64x64 pour CPU
         image_height: 64,
-        image_channels: 3,
-        conv1_filters: 16,
-        conv2_filters: 32,
-        conv3_filters: 64,
-        fc1_units: 128,
-        fc2_units: 64,
-        num_classes: 2,
-        dropout_rate: 0.5,
-        learning_rate: 0.001,
-        batch_size: 16,
-        num_epochs: 5,
+        conv1_filters: 16,     // Déjà réduit
+        conv2_filters: 32,     // Déjà réduit  
+        conv3_filters: 64,     // Déjà réduit
+        fc1_units: 128,        // Déjà réduit
+        fc2_units: 64,         // Déjà réduit
+        batch_size: 16,        // Bon pour CPU
+        num_epochs: 5,        // Réduire si trop long
         ..Default::default()
     };
 
