@@ -1,4 +1,5 @@
-<img width="1600" height="861" alt="image" src="https://github.com/user-attachments/assets/6906457f-2bfb-4576-96ae-c976b656c697" />
+<img width="1600" height="861" alt="image" src="https://github.com/user-attachments/assets/ab7beae4-4bc8-4904-afa9-3c6b19e14bc9" />
+
 # 🦟 Malaria Detection AI - CNN avec Burn Framework
 
 ## 📋 Table des Matières
@@ -284,12 +285,12 @@ Ce projet est distribué sous licence **MIT** - voir le fichier [LICENSE](LICENS
 Si vous utilisez ce code dans un contexte de recherche, merci de citer :
 ```
 @software{malaria_detection_2024,
-  author = {Votre Nom},
+  author = {FOSSOUO WATO  MARTIAL},
   title = {Malaria Detection CNN with Burn Framework},
   year = {2024},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/username/malaria-detection-cnn}}
+  howpublished = {\url{https://github.com/rustnew/Burn_malaria_model}}
 }
 ```
 
